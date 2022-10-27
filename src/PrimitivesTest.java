@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 class PrimitivesTest {
 	
     @Test
-    @Disabled
+    
 	void dataTypeTest(int g) {
 		int b = 10;
 		long a = 20;
@@ -30,7 +30,7 @@ class PrimitivesTest {
 	}
  
     @Test
-    @Disabled
+    
     void operatorsTest( ) {
     	int number = 789;
     	assertEquals(7, getThirdDigit(number));
@@ -66,7 +66,7 @@ int getThirdDigit(int number) {
 
 
 @Test
-@Disabled
+
 void test() {
 	
 	int number = 5643;
@@ -81,6 +81,8 @@ void test() {
 	}
 }
 }
+
+
 
 
 
