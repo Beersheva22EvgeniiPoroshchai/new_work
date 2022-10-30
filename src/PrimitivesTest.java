@@ -1,5 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import org.junit.*;
@@ -9,7 +10,9 @@ import org.junit.jupiter.api.Test;
 class PrimitivesTest {
 	
     @Test
+    @Disabled
     
+  
 	void dataTypeTest(int g) {
 		int b = 10;
 		long a = 20;
@@ -30,6 +33,7 @@ class PrimitivesTest {
 	}
  
     @Test
+    @Disabled
     
     void operatorsTest( ) {
     	int number = 789;
@@ -65,26 +69,41 @@ int getThirdDigit(int number) {
 
 
 
+
 @Test
+void getBitValueTest() {
+	long number = 0x3ab7f5; //0011_1010_1011_0111_1111_0101
+	assertEquals(1, BitOperations.getBitValue(number, 5));
+	assertEquals(0, BitOperations.getBitValue(number, 11));
+	assertEquals(0, BitOperations.getBitValue(number, 1));
+	assertEquals(1, BitOperations.getBitValue(number, 2));
+	assertEquals(-1, BitOperations.getBitValue(number, -2));
+	
+	
+} 
 
-void test() {
+@Test
+void setBitValueTest() {
+	long number = 0x3ab7f5; //0011_1010_1011_0111_1111_0101
+    // assertEquals(0x3ab7e5, BitOperations.setBitValue(number, 5, false));
+	assertEquals(0x3ab7f5, BitOperations.setBitValue(number, 5, true));
+	assertEquals(0x3ab7f7, BitOperations.setBitValue(number, 1, true));
+	assertEquals(0x3ab7f5, BitOperations.setBitValue(number, 1, false));
+    assertEquals(0x3ab7fd, BitOperations.setBitValue(number, 3, true));
 	
-	int number = 5643;
-	
-	for (int i = 1; number > 0; i++) {
-		 
-		int difer = number % (int)Math.pow(10, i);
-		
-		System.out.println(difer/(int)Math.pow(10, i-1));
-	
-		number = number - difer;
-	}
+}
+
+@Test
+void revertBitValueTest() {
+	long number = 0x3ab7f5; //0011_1010_1011_0111_1111_0101
+	//assertEquals(0x3ab7e5, BitOperations.revertBitValue(number, 5));
+	assertEquals(0x3ab7f4, BitOperations.revertBitValue(number, 0));
+	assertEquals(0x3ab7e5, BitOperations.revertBitValue(number, 4));
+	assertEquals(0x3ab7d5, BitOperations.revertBitValue(number, 5));
+	assertEquals(0x3ab7f1, BitOperations.revertBitValue(number, 2));
+	assertEquals(0x2ab7f5, BitOperations.revertBitValue(number, 20));
 }
 }
-
-
-
-
 
 
 
