@@ -71,8 +71,10 @@ int getThirdDigit(int number) {
 
 
 @Test
+@Disabled
+
 void getBitValueTest() {
-	long number = 0x3ab7f5; //0011_1010_1011_0111_1111_0101
+	long number = 17; //0011_1010_1011_0111_1111_0101
 	assertEquals(1, BitOperations.getBitValue(number, 5));
 	assertEquals(0, BitOperations.getBitValue(number, 11));
 	assertEquals(0, BitOperations.getBitValue(number, 1));
@@ -83,17 +85,20 @@ void getBitValueTest() {
 } 
 
 @Test
+@Disabled
 void setBitValueTest() {
 	long number = 0x3ab7f5; //0011_1010_1011_0111_1111_0101
-    // assertEquals(0x3ab7e5, BitOperations.setBitValue(number, 5, false));
-	assertEquals(0x3ab7f5, BitOperations.setBitValue(number, 5, true));
+   //assertEquals(0x3ab7e5, BitOperations.setBitValue(number, 5, false));
+	//assertEquals(0x3ab7f5, BitOperations.setBitValue(number, 5, true));
 	assertEquals(0x3ab7f7, BitOperations.setBitValue(number, 1, true));
 	assertEquals(0x3ab7f5, BitOperations.setBitValue(number, 1, false));
     assertEquals(0x3ab7fd, BitOperations.setBitValue(number, 3, true));
+  //assertEquals(0x3ab7f1, BitOperations.setBitValue(number, 2, true));
 	
 }
 
 @Test
+@Disabled
 void revertBitValueTest() {
 	long number = 0x3ab7f5; //0011_1010_1011_0111_1111_0101
 	//assertEquals(0x3ab7e5, BitOperations.revertBitValue(number, 5));
@@ -103,13 +108,40 @@ void revertBitValueTest() {
 	assertEquals(0x3ab7f1, BitOperations.revertBitValue(number, 2));
 	assertEquals(0x2ab7f5, BitOperations.revertBitValue(number, 20));
 }
+
+
+@Test
+void digitsNumberTest() {
+	long number = 456322;
+	assertEquals(6, Numbers.getNdigits(456322));
+	
+}
+	
+	
+	
+
+@Test
+void leadingZerosTest() {
+	long number = 17;
+	assertEquals(59, BitOperations.leadingZeros(number));
+}
+
+
+@Test
+void onesInNumberTest() {
+	long number = 17;
+	assertEquals(2, BitOperations.onesInNumber(number));
+
 }
 
 
 
+@Test
+void isHappyNumberTest() {
+	int number = 123321;
+	assertEquals(true, Numbers.isHappyNumber(123321));
+	
+}
 
-
-
-
-
-
+}
+	
