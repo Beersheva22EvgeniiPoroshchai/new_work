@@ -135,13 +135,12 @@ void onesInNumberTest() {
 }
 
 
-
 @Test
 void isHappyNumberTest() {
-	int number = 123321;
 	assertEquals(true, Numbers.isHappyNumber(123321));
+	assertEquals(false, Numbers.isHappyNumber(123322));
+	assertEquals(true, Numbers.isHappyNumber(465933));
 	
 }
-
 }
 	
