@@ -86,7 +86,7 @@ public class MyArrays {
 
 	}
 
-	public static int searchSameFirstElem(int arraySorted[], int number) {
+	public static int searchIndSameFirstElem(int arraySorted[], int number) {
 		int result =0;
 		int left = 0;
 		int right = arraySorted.length - 1;
@@ -168,7 +168,63 @@ public class MyArrays {
 	System.out.println(Arrays.toString(noSorted));
 	return noSorted;
 	}
+
+	/**
+	 * 
+	 * @param array of short positive numbers
+	 * @param sum
+	 * @return true if array contains two numbers, sum of which equls a given sum 
+	 */
+	
+	
+	
+static public boolean isSum2(short array[], short sum) {
+	short difValue[] = getDifValue(array, sum);
+	for (short i=0; i<difValue.length; i++) {
+		for (short j=0; j<array.length-1; j++) {
+			
+	if (difValue[i] >= 0 && array[j+1] == difValue[i]) {
+			
+			return true;
+		} 
+			
+		
+		
+	}
+	}
+	return false;
 }
+
+	public static short[] getDifValue(short arrayForDif[], short sum) {
+		short res[] = new short[arrayForDif.length];
+		printArray(arrayForDif);
+		for (int i = 0; i < res.length; i++) {
+			res[i] = (short) (sum - arrayForDif[i]);
+		
+		}
+		printArray(res);
+		System.out.print("sum: " + sum);
+		return res;
+	}
+	
+	private static void printArray (short [] array) {
+	System.out.println();
+	for(int i = 0; i < array.length; i++) {
+		System.out.print(array[i] + " ");
+	}
+	System.out.println();
+	}
+}
+
+
+
+
+
+
+
+
+
+
 
 	
 	
