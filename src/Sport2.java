@@ -3,7 +3,7 @@ public class Sport2 {
 
 
 
-	public class random {
+public class random {
 		 
 	    public static void main(String[] args) {
 	 
@@ -34,7 +34,7 @@ public class Sport2 {
 	    }
 	        
 	    
-	    }    
+}   
 	        
 	        
 public static int getRandomInt(int min, int max) {
