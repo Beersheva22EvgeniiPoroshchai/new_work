@@ -9,18 +9,18 @@ public class Strings {
 	 *         same length 2. the same symbols just in different order
 	 */
 
-	private static byte SIZE = 127;
+
 
 	public static boolean isAnagram(String str, String anagram) {
 		if (str.length() != anagram.length()) {
 			return false;
 		}
-		byte coun[] = new byte[SIZE];
+		byte coun[] = new byte[Byte.MAX_VALUE];
 		for (byte i = 0; i < str.length(); i++) {
 			coun[str.charAt(i)]++;
 			coun[anagram.charAt(i)]--;
 		}
-		for (byte i = 0; i < SIZE; i++) {
+		for (byte i = 0; i < Byte.MAX_VALUE; i++) {
 			if (coun[i] != 0) {
 				return false;
 			}
@@ -46,5 +46,38 @@ public class Strings {
 			strArray[i] = String.valueOf(forNum[i]);
 		}
 	}
+	
+	public static String javaNameExp () {
+		
+		return "[a-zA-Z$][\\w$]*|_[\\w$]+";
+		
+		
+	}
+	
+	public static String ipV4Octet () {
+		
+		
+		
+		return "[0-1][0-9]{2}|2[0-4][0-9]|2[0-5][0-5]";
+		
+		 
+		
+	
+	}
+	
+	public static String ipV4() {
+		
+
+		
+return "(((([0-1][0-9]{2}|2[0-4][0-9]|2[0-5][0-5])[.]){3})([0-1][0-9]{2}|2[0-4][0-9]|2[0-5][0-5]))";	
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 
 }
