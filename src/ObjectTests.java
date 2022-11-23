@@ -39,7 +39,7 @@ class ObjectTests {
 	}
 	
 	@Test
-	@Disabled
+//	@Disabled
 	void isAnagramTest() {
 	assertTrue(Strings.isAnagram("yellow", "loweyl"));
 	assertTrue(Strings.isAnagram("yellow", "elolyw"));
@@ -88,6 +88,10 @@ class ObjectTests {
 		@Test
 		void ipV4OctetTest() {
 			
+			assertTrue("0".matches(Strings.ipV4Octet()));
+			assertTrue("47".matches(Strings.ipV4Octet()));
+			assertTrue("1".matches(Strings.ipV4Octet()));
+			assertTrue("255".matches(Strings.ipV4Octet()));
 			assertTrue("196".matches(Strings.ipV4Octet()));
 			assertTrue("249".matches(Strings.ipV4Octet()));
             assertTrue("009".matches(Strings.ipV4Octet()));
@@ -99,12 +103,19 @@ class ObjectTests {
 			assertFalse("621".matches(Strings.ipV4Octet()));
 			assertFalse("267".matches(Strings.ipV4Octet()));
 			assertFalse("256".matches(Strings.ipV4Octet()));
+			assertFalse("987".matches(Strings.ipV4Octet()));
+			
+			
 			}
 	
 		@Test
 		void ipV4Test() {
 			
-			assertTrue("255.255.255.158".matches(Strings.ipV4()));
+			
+			assertTrue("12.255.89.158".matches(Strings.ipV4()));
+			assertTrue("0.34.235.2".matches(Strings.ipV4()));
+			assertTrue("200.99.1.117".matches(Strings.ipV4()));
+		    assertTrue("255.255.255.158".matches(Strings.ipV4()));
 			assertTrue("136.202.235.002".matches(Strings.ipV4()));
 			assertTrue("255.255.000.117".matches(Strings.ipV4()));
 			assertTrue("179.196.090.235".matches(Strings.ipV4()));
